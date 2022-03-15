@@ -11,9 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.10.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "forever": "^0.14.2",
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "prisma": "^3.10.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
   }
 }
