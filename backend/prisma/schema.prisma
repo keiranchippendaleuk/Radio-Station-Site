@@ -12,30 +12,39 @@ datasource db {
 
 model Program {
   id          Int         @default(autoincrement()) @id
-  title       String      @unique
-  author      String?
-  categories  Category[]
+  title       String      
+  author      String
+  description String
+  visibility  Boolean     @default(false)
+  categories  String?
+  genres      String?
   audios      Audio[]
-}
-
-model Category {
-  id          Int         @default(autoincrement()) @id
-  name        String
-  program     Program?    @relation(fields: [programId], references: [id])
-  programId   Int?
-  audio       Audio?      @relation(fields: [audioId], references: [id])
-  audioId     Int?
+  cover_path  String?
 }
 
 model Audio {
   id          Int         @default(autoincrement()) @id
   title       String
   author      String
-  published   Boolean     @default(false)
+  description String
+  visibility  Boolean     @default(false)
   date        String?
-  program     Program?    @relation(fields: [programId], references: [id])
+  program     Program?    @relation(fields: [programId], references: [id], onDelete: Cascade)
   programId   Int?
-  categories  Category[]
+  categories  String?
+  genres      String?
   audio_path  String
   cover_path  String?
+}
+
+model Category {
+  id          Int         @default(autoincrement()) @id
+  name        String
+  description String
+}
+
+model Genre {
+  id          Int         @default(autoincrement()) @id
+  name        String
+  description String
 }
