@@ -84,7 +84,7 @@ app.get("/genre/:id", async (req, res) => {
 // stream for audio tag for the id in the url
 app.get("/stream", (req, res) => {
     // get file ptah for the mp3 and gets stats
-    var filePath = './audio_files/test_audios/test_audio.mp3';
+    var filePath = './audio_files/miscellaneous_audios/test_audio.mp3';
     var stat = fs.statSync(filePath);
     var total = stat.size;
 
@@ -136,32 +136,25 @@ app.post("/program", jsonParser, async (req, res) => {
 });
 
 // creates a audio
-app.post("/audio", jsonParser, (req, res) => {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
+app.post("/audio", jsonParser, async (req, res) => {
     await prisma.audio.create({
         data: {
             title: req.body.title,
             author: req.body.author,
             description: req.body.description,
             visibility: req.body.visibility,
-            date: today,
             programId: req.body.program_id,
             categories: req.body.categories,
             genres: req.body.genres,
             audio_path: req.body.audio_path,
             cover_path: req.body.cover_path,
-
         }
     });
     res.send("System Received a POST on creating a audio");
 });
 
 // creates a category
-app.post("/category", jsonParser, (req, res) => {
+app.post("/category", jsonParser, async (req, res) => {
     await prisma.category.create({
         data: {
             name: req.body.name,
@@ -172,7 +165,7 @@ app.post("/category", jsonParser, (req, res) => {
 });
 
 // creates a genre
-app.post("/genre", jsonParser, (req, res) => {
+app.post("/genre", jsonParser, async (req, res) => {
     await prisma.genre.create({
         data: {
             name: req.body.name,

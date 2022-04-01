@@ -16,8 +16,8 @@ model Program {
   author      String
   description String
   visibility  Boolean     @default(false)
-  categories  String?
-  genres      String?
+  categories  String
+  genres      String
   audios      Audio[]
   cover_path  String?
 }
@@ -28,11 +28,12 @@ model Audio {
   author      String
   description String
   visibility  Boolean     @default(false)
-  date        String?
+  date        DateTime    @default(now())
   program     Program?    @relation(fields: [programId], references: [id], onDelete: Cascade)
-  programId   Int?
-  categories  String?
-  genres      String?
+  streams     Int         @default(0)
+  programId   Int
+  categories  String
+  genres      String
   audio_path  String
   cover_path  String?
 }
