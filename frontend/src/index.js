@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './index.css';
 import App from './App.js';
-import Admin from './Admin.js';
+import Admin from './admin/Admin.js';
+import APrograms from "./admin/Programs.js"
+import AAudios from "./admin/Audios.js"
+import AGenres from "./admin/Genres.js"
+import ACategories from "./admin/Categories.js"
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,6 +16,10 @@ ReactDOM.render(
       <Routes basename={'/'}>
         <Route path='/' element={<App />} />
         <Route path='/admin' element={<Admin />} />
+        <Route path='/admin/programs' element={<APrograms />} />
+        <Route path='/admin/audios' element={<AAudios />} />
+        <Route path='/admin/categories' element={<ACategories />} />
+        <Route path='/admin/genres' element={<AGenres />} />
       </Routes>
     </Router>
   </React.StrictMode>,
