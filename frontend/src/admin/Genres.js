@@ -12,8 +12,6 @@ function Genres(){
       .then((res) => res.json())
       .then((data) => setGenres(data));
   }, []);
-
-
   
   return(
     <>
@@ -37,38 +35,36 @@ function Genres(){
           </Nav>
         </Container>
       </Navbar>
-      <br/>
+      
       <div className="Table">
+        <br/>
+        <h1>Genres</h1>
         <Table striped bordered hover >
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
+              <th>Name</th>
               <th>Description</th>
-              <th>Author</th>
-              <th>Visibility</th>
             </tr>
           </thead>
           <tbody>
             {genres == null ?
             <tr>
-              <td colSpan={5} >Loading...</td>
+              <td colSpan={3} >Loading...</td>
             </tr>
             : 
             genres.map((info) => {
               return(
                 <tr>
                   <td>{info.id}</td>
-                  <td>{info.title}</td>
+                  <td>{info.name}</td>
                   <td>{info.description}</td>
-                  <td>{info.author}</td>
-                  <td>{info.visibility}</td>
                 </tr>
               )
             }) }
           </tbody>
         </Table>
-        <Button variant="primary" href="/admin/programs/new" style={{justifyContent:'right'}}>Create New</Button>
+        <Button variant="primary" href="/admin/genres/new" style={{justifyContent:'right'}}>Create New</Button>
       </div>
     </>
   );

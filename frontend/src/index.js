@@ -8,6 +8,10 @@ import APrograms from "./admin/Programs.js"
 import AAudios from "./admin/Audios.js"
 import AGenres from "./admin/Genres.js"
 import ACategories from "./admin/Categories.js"
+import NewProgram from "./admin/NewProgram.js"
+import NewAudio from "./admin/NewAudio.js"
+import NewGenre from "./admin/NewGenre.js"
+import NewCategory from "./admin/NewCategory.js"
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -20,6 +24,10 @@ ReactDOM.render(
         <Route path='/admin/audios' element={<AAudios />} />
         <Route path='/admin/categories' element={<ACategories />} />
         <Route path='/admin/genres' element={<AGenres />} />
+        <Route path='/admin/programs/new' element={<NewProgram />} />
+        <Route path='/admin/audios/new' element={<NewAudio />} />
+        <Route path='/admin/genres/new' element={<NewGenre />} />
+        <Route path='/admin/categories/new' element={<NewCategory />} />
       </Routes>
     </Router>
   </React.StrictMode>,

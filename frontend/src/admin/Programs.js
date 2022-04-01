@@ -12,8 +12,6 @@ function Programs(){
       .then((res) => res.json())
       .then((data) => setPrograms(data));
   }, []);
-
-
   
   return(
     <>
@@ -37,8 +35,10 @@ function Programs(){
           </Nav>
         </Container>
       </Navbar>
-      <br/>
+
       <div className="Table">
+        <br/>
+        <h1>Programs</h1>
         <Table striped bordered hover >
           <thead>
             <tr>
@@ -65,7 +65,7 @@ function Programs(){
                   <td>{info.visibility}</td>
                 </tr>
               )
-            }) }
+            })}
           </tbody>
         </Table>
         <Button variant="primary" href="/admin/programs/new" style={{justifyContent:'right'}}>Create New</Button>

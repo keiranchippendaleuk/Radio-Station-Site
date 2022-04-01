@@ -37,8 +37,10 @@ function Audios(){
           </Nav>
         </Container>
       </Navbar>
-      <br/>
+      
       <div className="Table">
+        <br/>
+        <h1>Audios</h1>
         <Table striped bordered hover >
           <thead>
             <tr>
@@ -68,7 +70,7 @@ function Audios(){
             }) }
           </tbody>
         </Table>
-        <Button variant="primary" href="/admin/programs/new" style={{justifyContent:'right'}}>Create New</Button>
+        <Button variant="primary" href="/admin/audios/new" style={{justifyContent:'right'}}>Create New</Button>
       </div>
     </>
   );

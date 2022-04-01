@@ -35,38 +35,36 @@ function Categories(){
           </Nav>
         </Container>
       </Navbar>
-      <br/>
+      
       <div className="Table">
+        <br/>
+        <h1>Categories</h1>
         <Table striped bordered hover >
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
+              <th>Name</th>
               <th>Description</th>
-              <th>Author</th>
-              <th>Visibility</th>
             </tr>
           </thead>
           <tbody>
             {categories == null ?
             <tr>
-              <td colSpan={5} >Loading...</td>
+              <td colSpan={3} >Loading...</td>
             </tr>
             : 
             categories.map((info) => {
               return(
                 <tr>
                   <td>{info.id}</td>
-                  <td>{info.title}</td>
+                  <td>{info.name}</td>
                   <td>{info.description}</td>
-                  <td>{info.author}</td>
-                  <td>{info.visibility}</td>
                 </tr>
               )
             }) }
           </tbody>
         </Table>
-        <Button variant="primary" href="/admin/programs/new" style={{justifyContent:'right'}}>Create New</Button>
+        <Button variant="primary" href="/admin/categories/new" style={{justifyContent:'right'}}>Create New</Button>
       </div>
     </>
   );

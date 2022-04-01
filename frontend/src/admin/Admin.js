@@ -21,7 +21,7 @@ function Admin(){
             height="30"
             className="d-inline-block align-top"
             />{' '}
-          &nbsp;Administration
+          &nbsp;WMBC Admin
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/admin/programs">Programs</Nav.Link>
