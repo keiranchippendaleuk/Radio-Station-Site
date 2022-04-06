@@ -6,6 +6,7 @@ From the root directory cd into backend and run "npm start"
 ```
 path/to/the/root_dir
 cd backend
+npm i
 npm start
 ```
 
@@ -14,5 +15,6 @@ From the root directory cd into frontend and run "npm start"
 ```
 path/to/the/root_dir
 cd frontend
+npm i
 npm start
 ```
